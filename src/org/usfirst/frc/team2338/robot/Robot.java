@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team2338.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -35,7 +34,6 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         
         teleOpCommand = new TankDrive();
-        teleOpCommand = new ShooterFire();
     }
 	
 
