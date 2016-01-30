@@ -7,23 +7,21 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterStandby extends Command {
+public class CollectorStandby extends Command {
 
-    public ShooterStandby() {
-    	requires(Robot.shooter);
+    public CollectorStandby() {
+    	requires(Robot.collector);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//initTime.
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.drive(0);
+    	Robot.collector.drive(0);
     }
 
-    // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return true;
     }

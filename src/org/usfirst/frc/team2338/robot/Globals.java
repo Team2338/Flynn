@@ -6,10 +6,13 @@ package org.usfirst.frc.team2338.robot;
  */
 public class Globals {
 	public static final double shooterSpeed = 1.0;
+	public static final double collectorSpeed = 1.0;
 	
 	// Shooter PID
 	public static final double shooterP = 0d;
 	public static final double shooterI = 0d;
 	public static final double shooterD = 0d;
 }
+	
+
 
