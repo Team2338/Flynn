@@ -44,6 +44,8 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		SmartDashboard.putNumber("Right Velocity", shooter.rightShooterVel());
+		SmartDashboard.putNumber("Left Velocity", shooter.leftShooterVel());
 	}
 
     public void autonomousInit() {

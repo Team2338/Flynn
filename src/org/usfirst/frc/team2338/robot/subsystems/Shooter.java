@@ -56,6 +56,22 @@ public class Shooter extends Subsystem {
 		drive(0);
 	}
 	
+	public double rightShooterVel(){
+		return shooterRight.getEncVelocity();
+	}
+	
+	public double leftShooterVel(){
+		return shooterLeft.getEncVelocity();
+	}
+	
+	public void enableManualControl(){
+		shooterRight.changeControlMode(TalonControlMode.PercentVbus);
+		shooterLeft.changeControlMode(TalonControlMode.PercentVbus);
+		drive(0);
+		shooterRight.enableControl();
+		shooterLeft.enableControl();
+	}
+	
     public void initDefaultCommand() {
         setDefaultCommand(new ShooterStandby());
     }
