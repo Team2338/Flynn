@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2338.robot.subsystems;
 
 import org.usfirst.frc.team2338.robot.RobotMap;
+import org.usfirst.frc.team2338.robot.commands.CollectorStandby;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -22,8 +23,7 @@ public class Collector extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new CollectorStandby());
     }
 }
 
