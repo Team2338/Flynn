@@ -15,12 +15,12 @@ public class ShooterStandby extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	initTime.
+    	//initTime.
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.shoot(0);
+    	Robot.shooter.drive(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

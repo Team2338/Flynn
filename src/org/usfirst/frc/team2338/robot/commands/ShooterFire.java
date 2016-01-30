@@ -20,7 +20,7 @@ public class ShooterFire extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.shoot(Globals.shooterSpeed);
+    	Robot.shooter.drive(Globals.shooterSpeed);
     	
     }
 
@@ -31,7 +31,7 @@ public class ShooterFire extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooter.shoot(0);
+    	Robot.shooter.drive(0);
     }
 
     // Called when another command which requires one or more of the same
