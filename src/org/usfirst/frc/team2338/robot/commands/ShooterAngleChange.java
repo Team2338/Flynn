@@ -16,12 +16,12 @@ public class ShooterAngleChange extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.shooterAngle.stop();
+    	Robot.shooterAngle.drive(0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterAngle.drive();
+    	Robot.shooterAngle.drive(.25);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,6 +36,6 @@ public class ShooterAngleChange extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.shooterAngle.stop();
+    	Robot.shooterAngle.drive(0);
     }
 }

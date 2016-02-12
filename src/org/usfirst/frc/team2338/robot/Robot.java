@@ -20,17 +20,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain drivetrain = new Drivetrain();
-<<<<<<< HEAD
-	public static final Shooter shooter = new Shooter();
-	public static final Collector collector = new Collector();
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
-=======
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
-	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();
->>>>>>> refs/remotes/origin/master
 	public static OI oi;
 	
 	Command autonomousCommand;
@@ -54,12 +48,8 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-<<<<<<< HEAD
-		shooter.dispShooterVel(); 
-		
-=======
+		shooterFlywheel.dispShooterVel(); 
 		update();
->>>>>>> refs/remotes/origin/master
 	}
 
     public void autonomousInit() {

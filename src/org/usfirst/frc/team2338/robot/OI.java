@@ -13,11 +13,7 @@ public class OI {
 	public static final Joystick leftStick = new Joystick(0);
 	public static final Joystick rightStick = new Joystick(1);
 	public static final Joystick auxStick = new Joystick(2);
-	
-<<<<<<< HEAD
-	public OI() {
-		
-=======
+
 	private static Button aux2;
 	private static Button aux3;
 	private static Button aux4;
@@ -55,7 +51,6 @@ public class OI {
 		aux10.whenReleased(new CollectorAngleStandby());
 		aux11.whenPressed(new CollectorUp());
 		aux11.whenReleased(new CollectorAngleStandby());
->>>>>>> refs/remotes/origin/master
 	}
 }
 
