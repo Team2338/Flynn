@@ -22,6 +22,7 @@ public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final Shooter shooter = new Shooter();
 	public static final Collector collector = new Collector();
+	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static OI oi;
 	
 	Command autonomousCommand;
@@ -44,8 +45,8 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-		SmartDashboard.putNumber("Right Velocity", shooter.rightShooterVel());
-		SmartDashboard.putNumber("Left Velocity", shooter.leftShooterVel());
+		shooter.dispShooterVel(); 
+		
 	}
 
     public void autonomousInit() {

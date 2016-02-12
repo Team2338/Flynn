@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -25,7 +26,7 @@ public class Shooter extends Subsystem {
 		
 	}
 
-	public void drive(double speed) {
+	public static void drive(double speed) {
 		shooterRight.set(speed);
 		shooterLeft.set(-speed);
 	}
@@ -56,12 +57,17 @@ public class Shooter extends Subsystem {
 		drive(0);
 	}
 	
-	public double rightShooterVel(){
+	public static double rightShooterVel(){
 		return shooterRight.getEncVelocity();
 	}
 	
-	public double leftShooterVel(){
+	public static double leftShooterVel(){
 		return shooterLeft.getEncVelocity();
+	}
+	
+	public void dispShooterVel() {
+		SmartDashboard.putNumber("Right Velocity", rightShooterVel());
+		SmartDashboard.putNumber("Left Velocity", leftShooterVel());
 	}
 	
 	public void enableManualControl(){

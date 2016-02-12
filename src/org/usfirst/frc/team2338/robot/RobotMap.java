@@ -14,4 +14,5 @@ public class RobotMap {
 	public static int collector = 3;
 	public static int shooterRight = 4;
 	public static int shooterLeft = 5;
+	public static int shooterAngle = 8;
 }
