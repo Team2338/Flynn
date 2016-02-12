@@ -9,22 +9,20 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Shooter extends Subsystem {
-    
-	private static final CANTalon shooterRight = new CANTalon(RobotMap.shooterRight);
-	private static final CANTalon shooterLeft = new CANTalon(RobotMap.shooterLeft);
+public class CollectorReceptor extends Subsystem {
 	
-	public Shooter() {
+	private static final CANTalon collectorReceptor = new CANTalon(RobotMap.collectorReceptor);
+	
+	public CollectorReceptor() {
 		super();
 	}
-
-	public void drive(double speed) {
-		shooterRight.set(speed);
-		shooterLeft.set(-speed);
-	}
 	
+	public void drive(double speed) {
+		collectorReceptor.set(speed);
+	}
+
     public void initDefaultCommand() {
-        setDefaultCommand(new ShooterStandby());
+    	setDefaultCommand(new CollectorReceptorStandby());
     }
 }
 

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2338.robot.commands;
 
+import org.usfirst.frc.team2338.robot.Globals;
 import org.usfirst.frc.team2338.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -7,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterStandby extends Command {
+public class CollectorAngleBackward extends Command {
 
-    public ShooterStandby() {
-    	requires(Robot.shooterFlywheel);
+    public CollectorAngleBackward() {
+    	requires(Robot.collectorAngle);
     }
 
     // Called just before this Command runs the first time
@@ -19,12 +20,12 @@ public class ShooterStandby extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterFlywheel.drive(0);
+    	Robot.collectorAngle.drive(-Globals.collectorAngleSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true

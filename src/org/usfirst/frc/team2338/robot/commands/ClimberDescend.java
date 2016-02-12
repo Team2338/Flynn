@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2338.robot.commands;
 
+import org.usfirst.frc.team2338.robot.Globals;
 import org.usfirst.frc.team2338.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -7,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CollectorStandby extends Command {
+public class ClimberDescend extends Command {
 
-    public CollectorStandby() {
-    	requires(Robot.collector);
+    public ClimberDescend() {
+        requires(Robot.climber);
     }
 
     // Called just before this Command runs the first time
@@ -19,11 +20,12 @@ public class CollectorStandby extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.collector.drive(0);
+    	Robot.climber.drive(-Globals.climberSpeed, -Globals.climberSpeed);
     }
 
+    // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true

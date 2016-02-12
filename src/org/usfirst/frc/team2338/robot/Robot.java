@@ -20,8 +20,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain drivetrain = new Drivetrain();
-	public static final Shooter shooter = new Shooter();
-	public static final Collector collector = new Collector();
+	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
+	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
+	public static final CollectorAngle collectorAngle = new CollectorAngle();
+	public static final Climber climber = new Climber();
 	public static OI oi;
 	
 	Command autonomousCommand;
@@ -44,6 +46,7 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		update();
 	}
 
     public void autonomousInit() {
@@ -53,6 +56,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        update();
     }
 
     public void teleopInit() {
@@ -65,6 +69,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        update();
     }
     
     /**
@@ -72,5 +77,10 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        update();
+    }
+    
+    public void update() {
+    	// Insert SmartDashboard code here
     }
 }

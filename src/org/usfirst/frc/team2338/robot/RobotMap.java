@@ -11,7 +11,11 @@ public class RobotMap {
 	public static int frontRight = 2;
 	public static int rearLeft = 6;
 	public static int rearRight = 7;
-	public static int collector = 3;
-	public static int shooterRight = 4;
-	public static int shooterLeft = 5;
+	public static int collectorAngle = 3;
+	public static int collectorReceptor = 4;
+	public static int shooterAngle = 5;
+	public static int shooterRight = 8;
+	public static int shooterLeft = 9;
+	public static int climberLeft = 10;
+	public static int climberRight = 11;
 }
