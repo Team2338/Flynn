@@ -30,6 +30,8 @@ public class OI {
 		aux3 = new JoystickButton(auxStick, 3);
 		aux6 = new JoystickButton(auxStick, 6);
 		aux7 = new JoystickButton(auxStick, 7);
+		aux8 = new JoystickButton(auxStick, 8);
+		aux9 = new JoystickButton(auxStick, 9);
 		aux10 = new JoystickButton(auxStick, 10);
 		aux11 = new JoystickButton(auxStick, 11);
 		
@@ -40,10 +42,14 @@ public class OI {
 		aux6.whenPressed(new ClimberAscend());
 		aux6.whenReleased(new ClimberStandby());
 		aux7.whenPressed(new ClimberDescend());
-		aux8.whenReleased(new ClimberStandby());
-		aux10.whenPressed(new CollectorAngleBackward());
+		aux7.whenReleased(new ClimberStandby());
+		aux8.whenPressed(new ShooterDown());
+		aux8.whenReleased(new ShooterAngleStandby());
+		aux9.whenPressed(new ShooterUp());
+		aux9.whenReleased(new ShooterUp());
+		aux10.whenPressed(new CollectorDown());
 		aux10.whenReleased(new CollectorAngleStandby());
-		aux11.whenPressed(new CollectorAngleForward());
+		aux11.whenPressed(new CollectorUp());
 		aux11.whenReleased(new CollectorAngleStandby());
 	}
 }

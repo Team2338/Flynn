@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterFire extends Command {
+public class ShooterUp extends Command {
 
-    public ShooterFire() {
-        requires(Robot.shooterFlywheel);
+    public ShooterUp() {
+    	requires(Robot.shooterAngle);
     }
 
     // Called just before this Command runs the first time
@@ -20,8 +20,7 @@ public class ShooterFire extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterFlywheel.drive(Globals.shooterFlywheelSpeed);
-    	
+    	Robot.shooterAngle.drive(Globals.shooterAngleSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,12 +30,10 @@ public class ShooterFire extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooterFlywheel.drive(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	
     }
 }

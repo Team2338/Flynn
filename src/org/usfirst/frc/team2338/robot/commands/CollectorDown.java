@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CollectorAngleForward extends Command {
+public class CollectorDown extends Command {
 
-    public CollectorAngleForward() {
+    public CollectorDown() {
     	requires(Robot.collectorAngle);
     }
 
@@ -20,7 +20,7 @@ public class CollectorAngleForward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.collectorAngle.drive(Globals.collectorAngleSpeed);
+    	Robot.collectorAngle.drive(-Globals.collectorAngleSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

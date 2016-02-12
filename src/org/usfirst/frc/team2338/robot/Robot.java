@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot {
 
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
+	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();

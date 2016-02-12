@@ -11,20 +11,20 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ShooterFlywheel extends Subsystem {
     
-	private static final CANTalon shooterRight = new CANTalon(RobotMap.shooterRight);
-	private static final CANTalon shooterLeft = new CANTalon(RobotMap.shooterLeft);
+	private static final CANTalon shooterFlywheelLeft = new CANTalon(RobotMap.shooterFlywheelLeft);
+	private static final CANTalon shooterFlywheelRight = new CANTalon(RobotMap.shooterFlywheelRight);
 	
 	public ShooterFlywheel() {
 		super();
 	}
 
 	public void drive(double speed) {
-		shooterRight.set(speed);
-		shooterLeft.set(-speed);
+		shooterFlywheelLeft.set(speed);
+		shooterFlywheelRight.set(-speed);
 	}
 	
     public void initDefaultCommand() {
-        setDefaultCommand(new ShooterStandby());
+        setDefaultCommand(new ShooterFlywheelStandby());
     }
 }
 

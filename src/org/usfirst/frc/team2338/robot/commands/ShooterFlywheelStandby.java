@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterStandby extends Command {
+public class ShooterFlywheelStandby extends Command {
 
-    public ShooterStandby() {
+    public ShooterFlywheelStandby() {
     	requires(Robot.shooterFlywheel);
     }
 

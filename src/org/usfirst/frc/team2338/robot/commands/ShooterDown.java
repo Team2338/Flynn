@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CollectorAngleBackward extends Command {
+public class ShooterDown extends Command {
 
-    public CollectorAngleBackward() {
-    	requires(Robot.collectorAngle);
+    public ShooterDown() {
+    	requires(Robot.shooterAngle);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +20,7 @@ public class CollectorAngleBackward extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.collectorAngle.drive(-Globals.collectorAngleSpeed);
+    	Robot.shooterAngle.drive(-Globals.shooterAngleSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
