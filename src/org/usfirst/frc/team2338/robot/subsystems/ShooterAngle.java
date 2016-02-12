@@ -12,11 +12,11 @@ public class ShooterAngle extends Subsystem {
     
 	private static final CANTalon shooterAngle = new CANTalon(8);
 
-	public static void drive(){
+	public void drive(){
 		shooterAngle.set(OI.auxStick.getY());
 	}
 	
-	public static void stop() {
+	public void stop() {
 		shooterAngle.set(0);
 	}
 	
