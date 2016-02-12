@@ -5,7 +5,7 @@ import org.usfirst.frc.team2338.robot.*;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class ClimberStandby extends Command {
 

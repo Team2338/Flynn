@@ -6,6 +6,7 @@ package org.usfirst.frc.team2338.robot;
  * floating around.
  */
 public class RobotMap {
+
 	// CAN Addresses
 	public static int frontLeft = 1;
 	public static int frontRight = 2;
@@ -13,10 +14,9 @@ public class RobotMap {
 	public static int rearRight = 4;
 	public static int collectorAngle = 5;
 	public static int collectorReceptor = 6;
-	public static int shooterFlywheelLeft = 7;
-	public static int shooterFlywheelRight = 8;
-	public static int shooterAngleLeft = 9;
-	public static int shooterAngleRight = 10;
+	public static int shooterFlywheel = 7;
+	public static int shooterPolycord = 8;
+	public static int shooterAngle = 9;
 	public static int climberLeft = 11;
 	public static int climberRight = 12;
 }

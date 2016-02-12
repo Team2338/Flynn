@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class Drivetrain extends Subsystem {
     

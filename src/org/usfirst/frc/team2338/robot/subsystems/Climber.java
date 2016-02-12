@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class Climber extends Subsystem {
 	private static final CANTalon climberLeft = new CANTalon(RobotMap.climberLeft);

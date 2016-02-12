@@ -7,7 +7,7 @@ import org.usfirst.frc.team2338.robot.subsystems.CollectorReceptor;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class CollectorCollect extends Command {
 

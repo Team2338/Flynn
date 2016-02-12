@@ -5,7 +5,7 @@ import org.usfirst.frc.team2338.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class ShooterFlywheelStandby extends Command {
 
@@ -19,7 +19,8 @@ public class ShooterFlywheelStandby extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterFlywheel.drive(0);
+    	Robot.shooterFlywheel.driveFlywheel(0);
+    	Robot.shooterFlywheel.drivePolycord(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

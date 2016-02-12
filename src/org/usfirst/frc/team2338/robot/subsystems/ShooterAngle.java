@@ -7,16 +7,14 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
 public class ShooterAngle extends Subsystem {
     
-	private static final CANTalon shooterAngleLeft = new CANTalon(RobotMap.shooterAngleLeft);
-	private static final CANTalon shooterAngleRight = new CANTalon(RobotMap.shooterAngleRight);
+	private static final CANTalon shooterAngle = new CANTalon(RobotMap.shooterAngle);
 
 	public void drive(double speed) {
-		shooterAngleLeft.set(speed);
-		shooterAngleRight.set(speed);
+		shooterAngle.set(speed);
 	}
 	
     public void initDefaultCommand() {
