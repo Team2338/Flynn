@@ -36,6 +36,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         
         teleOpCommand = new TankDrive();
+        teleOpCommand = new ShooterAngleChange();
     }
 	
 
