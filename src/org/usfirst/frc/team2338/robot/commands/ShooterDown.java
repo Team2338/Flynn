@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CollectorEject extends Command {
+public class ShooterDown extends Command {
 
-    public CollectorEject() {
-    	requires(Robot.collectorReceptor);
+    public ShooterDown() {
+    	requires(Robot.shooterAngle);
     }
 
     // Called just before this Command runs the first time
@@ -20,15 +20,16 @@ public class CollectorEject extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.collectorReceptor.drive(-Globals.collectorReceptorSpeed);
-   }
-
-    protected boolean isFinished() {
-        return true;
+    	Robot.shooterAngle.drive(-Globals.shooterAngleSpeed);
     }
 
-    protected void end() {
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return false;
+    }
 
+    // Called once after isFinished returns true
+    protected void end() {
     }
 
     // Called when another command which requires one or more of the same

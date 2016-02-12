@@ -1,6 +1,5 @@
 package org.usfirst.frc.team2338.robot.commands;
 
-import org.usfirst.frc.team2338.robot.Globals;
 import org.usfirst.frc.team2338.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -8,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class CollectorEject extends Command {
+public class CollectorReceptorStandby extends Command {
 
-    public CollectorEject() {
+    public CollectorReceptorStandby() {
     	requires(Robot.collectorReceptor);
     }
 
@@ -20,15 +19,15 @@ public class CollectorEject extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.collectorReceptor.drive(-Globals.collectorReceptorSpeed);
-   }
+    	Robot.collectorReceptor.drive(0);
+    }
 
     protected boolean isFinished() {
         return true;
     }
 
+    // Called once after isFinished returns true
     protected void end() {
-
     }
 
     // Called when another command which requires one or more of the same

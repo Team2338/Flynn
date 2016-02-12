@@ -13,18 +13,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class Shooter extends Subsystem {
+public class CollectorAngle extends Subsystem {
     
-	private static final CANTalon shooterRight = new CANTalon(RobotMap.shooterRight);
-	private static final CANTalon shooterLeft = new CANTalon(RobotMap.shooterLeft);
+	private static final CANTalon collectorAngle = new CANTalon(RobotMap.collectorAngle);
 	
-	public Shooter() {
+	public CollectorAngle() {
 		super();
 		enableVelocityControl();
 		shooterRight.set(0);
 		shooterLeft.set(0);	
 		
 	}
+<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/subsystems/Shooter.java
 
 	public static void drive(double speed) {
 		shooterRight.set(speed);
@@ -78,8 +78,15 @@ public class Shooter extends Subsystem {
 		shooterLeft.enableControl();
 	}
 	
+=======
+	
+	public void drive(double speed) {
+		collectorAngle.set(speed);
+	}
+
+>>>>>>> refs/remotes/origin/master:src/org/usfirst/frc/team2338/robot/subsystems/CollectorAngle.java
     public void initDefaultCommand() {
-        setDefaultCommand(new ShooterStandby());
+    	setDefaultCommand(new CollectorAngleStandby());
     }
 }
 

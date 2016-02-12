@@ -7,20 +7,19 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ShooterStandby extends Command {
+public class ShooterFlywheelStandby extends Command {
 
-    public ShooterStandby() {
-    	requires(Robot.shooter);
+    public ShooterFlywheelStandby() {
+    	requires(Robot.shooterFlywheel);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//initTime.
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.drive(0);
+    	Robot.shooterFlywheel.drive(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
