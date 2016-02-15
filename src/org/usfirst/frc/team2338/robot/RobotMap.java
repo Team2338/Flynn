@@ -17,6 +17,16 @@ public class RobotMap {
 	public static int shooterFlywheel = 7;
 	public static int shooterPolycord = 8;
 	public static int shooterAngle = 9;
-	public static int climberLeft = 11;
-	public static int climberRight = 12;
+	public static int climber = 10;
+	public static int arm = 11;
+	
+	
+	// DIO Ports
+	public static int collectorMinAngle = 1;
+	public static int collectorMaxAngle = 2;
+	public static int shooterMinAngle = 3;
+	public static int shooterMaxAngle = 4;
+	public static int climberMin = 5;
+	public static int climberMax = 6;
+	public static int armLimit = 7;
 }

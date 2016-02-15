@@ -12,6 +12,7 @@ public class Globals {
 	public static final double collectorReceptorSpeed = 1.0;
 	public static final double collectorAngleSpeed = 0.5;
 	public static final double climberSpeed = 1.0;
+	public static final double armSpeed = 1.0;
 	
 	// TIMEEEEEEEEEEES
 	public static final double shooterFlywheelTime = 2.0;

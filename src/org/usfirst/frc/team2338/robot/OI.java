@@ -67,11 +67,15 @@ public class OI {
 		aux11 = new JoystickButton(auxStick, 11);
 		
 		// Auxiliary actions
+		auxTrigger.whenPressed(new ShooterFire());
 		aux2.whenPressed(new CollectorCollect());
 		aux2.whenReleased(new CollectorReceptorStandby());
 		aux3.whenPressed(new CollectorEject());
 		aux3.whenReleased(new CollectorReceptorStandby());
-		aux5.whenPressed(new ShooterFire());
+		aux4.whenPressed(new ArmExtend());
+		aux4.whenReleased(new ArmStandby());
+		aux5.whenPressed(new ArmRetract());
+		aux5.whenReleased(new ArmStandby());
 		aux6.whenPressed(new ClimberAscend());
 		aux6.whenReleased(new ClimberStandby());
 		aux7.whenPressed(new ClimberDescend());

@@ -20,16 +20,18 @@ public class ClimberAscend extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.climber.drive(Globals.climberSpeed, Globals.climberSpeed);
+    	Robot.climber.drive(Globals.climberSpeed);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Robot.climber.getMax();
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.climber.drive(0);
     }
 
     // Called when another command which requires one or more of the same
