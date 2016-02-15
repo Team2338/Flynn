@@ -20,11 +20,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain drivetrain = new Drivetrain();
+<<<<<<< HEAD
+=======
+	public static final Shooter shooterFlywheel = new Shooter();
+>>>>>>> refs/remotes/origin/master
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();
+	public static final Arm arm = new Arm();
 	public static OI oi;
 	
 	Command autonomousCommand;
@@ -40,15 +45,15 @@ public class Robot extends IterativeRobot {
         teleOpCommand = new TankDrive();
         teleOpCommand = new ShooterAngleChange();
     }
-	
 
-    public void disabledInit(){
-
-    }
+    public void disabledInit() { }
 	
 	public void disabledPeriodic() {
+<<<<<<< HEAD
 		Scheduler.getInstance().run();
 		shooterFlywheel.dispShooterVel(); 
+=======
+>>>>>>> refs/remotes/origin/master
 		update();
 	}
 
@@ -58,7 +63,6 @@ public class Robot extends IterativeRobot {
     }
 
     public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
         update();
     }
 
@@ -71,19 +75,27 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        Scheduler.getInstance().run();
         update();
     }
+    
+    public void testinit() { 	}
     
     /**
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
         LiveWindow.run();
-        update();
     }
     
     public void update() {
-    	// Insert SmartDashboard code here
+        Scheduler.getInstance().run();
+        SmartDashboard.putBoolean("ClimberMin: ", climber.getMin());
+        SmartDashboard.putBoolean("ClimberMax: ", climber.getMax());
+        SmartDashboard.putBoolean("CollectorAngleMin: ", collectorAngle.getMin());
+        SmartDashboard.putBoolean("CollectorAngleMax: ", collectorAngle.getMax());
+        SmartDashboard.putBoolean("ShooterAngleMin: ", shooterAngle.getMin());
+        SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
+        SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
+        SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
     }
 }

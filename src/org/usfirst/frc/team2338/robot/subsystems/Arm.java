@@ -2,7 +2,6 @@ package org.usfirst.frc.team2338.robot.subsystems;
 
 import org.usfirst.frc.team2338.robot.RobotMap;
 import org.usfirst.frc.team2338.robot.commands.*;
-
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -10,30 +9,30 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
-public class Climber extends Subsystem {
-	private static final CANTalon climber = new CANTalon(RobotMap.climber);
+public class Arm extends Subsystem {
+	private static final CANTalon arm = new CANTalon(RobotMap.arm);
 	
-	private static final DigitalInput climberMin = new DigitalInput(RobotMap.climberMin);
-	private static final DigitalInput climberMax = new DigitalInput(RobotMap.climberMax);
-    
-	public Climber() {
+	private static final DigitalInput armMin = new DigitalInput(RobotMap.armMin);
+	private static final DigitalInput armMax = new DigitalInput(RobotMap.armMax);
+	
+	public Arm() {
 		super();
 	}
-
+	
 	public void drive(double speed) {
-		climber.set(speed);
+		arm.set(speed);
 	}
 	
 	public boolean getMin() {
-		return climberMin.get();
+		return armMin.get();
 	}
 	
 	public boolean getMax() {
-		return climberMax.get();
+		return armMax.get();
 	}
-	
+
     public void initDefaultCommand() {
-    	setDefaultCommand(new ClimberStandby());
+    	setDefaultCommand(new ArmStandby());
     }
 }
 

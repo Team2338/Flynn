@@ -8,10 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
  */
-public class ShooterUp extends Command {
+public class ArmStandby extends Command {
 
-    public ShooterUp() {
-    	requires(Robot.shooterAngle);
+    public ArmStandby() {
+    	requires(Robot.arm);
     }
 
     // Called just before this Command runs the first time
@@ -20,17 +20,16 @@ public class ShooterUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooterAngle.drive(Globals.shooterAngleSpeed);
+    	Robot.arm.drive(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.shooterAngle.getMax();
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.shooterAngle.drive(0);
     }
 
     // Called when another command which requires one or more of the same
