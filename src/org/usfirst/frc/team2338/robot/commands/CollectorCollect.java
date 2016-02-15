@@ -2,7 +2,6 @@ package org.usfirst.frc.team2338.robot.commands;
 
 import org.usfirst.frc.team2338.robot.Globals;
 import org.usfirst.frc.team2338.robot.Robot;
-import org.usfirst.frc.team2338.robot.subsystems.CollectorReceptor;
 
 import edu.wpi.first.wpilibj.command.Command;
 
