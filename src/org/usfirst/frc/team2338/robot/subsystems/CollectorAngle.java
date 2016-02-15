@@ -5,12 +5,9 @@ import org.usfirst.frc.team2338.robot.RobotMap;
 import org.usfirst.frc.team2338.robot.commands.*;
 
 import edu.wpi.first.wpilibj.CANTalon;
-<<<<<<< HEAD
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
-=======
 import edu.wpi.first.wpilibj.DigitalInput;
->>>>>>> refs/remotes/origin/master
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 

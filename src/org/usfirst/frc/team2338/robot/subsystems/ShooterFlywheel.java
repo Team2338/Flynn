@@ -15,59 +15,55 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class ShooterFlywheel extends Subsystem {
     
-	private static final CANTalon shooterFlywheelLeft = new CANTalon(RobotMap.shooterFlywheelLeft);
-	private static final CANTalon shooterFlywheelRight = new CANTalon(RobotMap.shooterFlywheelRight);
+	private static final CANTalon shooterFlywheel = new CANTalon(RobotMap.shooterFlywheel);
+	private static final CANTalon shooterPolycord = new CANTalon(RobotMap.shooterPolycord);
 	
 	public ShooterFlywheel() {
 		super();
 		enableVelocityControl();
-		shooterFlywheelRight.set(0);
-		shooterFlywheelLeft.set(0);
 	}
 
-	public void drive(double speed) {
-		shooterFlywheelLeft.set(speed);
-		shooterFlywheelRight.set(-speed);
+	public void driveFlywheel(double speed) {
+		shooterFlywheel.set(speed);
 	}
 	
-	public double getRightSetpoint() {
-		return shooterFlywheelRight.getSetpoint();
+	public void drivePolycord(double speed) {
+		shooterPolycord.set(speed);
 	}
 	
-	public double getLeftSetpoint() {
-		return shooterFlywheelLeft.getSetpoint();
+	public double getFlywheelSetpoint() {
+		return shooterFlywheel.getSetpoint();
 	}
 	
-	public double getRightError() {
-		return shooterFlywheelRight.getClosedLoopError() ;
+	public double getPolycordSetpoint() {
+		return shooterFlywheel.getSetpoint();
 	}
 	
-	public double getLeftError() {
-		return shooterFlywheelLeft.getClosedLoopError();
+	public double getFlywheelError() {
+		return shooterFlywheel.getClosedLoopError();
 	}
 	
+	public double getPolycordError() {
+		return shooterPolycord.getClosedLoopError();
+	}
 	
 	public void enableVelocityControl() {
-		shooterFlywheelRight.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		shooterFlywheelLeft.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		shooterFlywheelRight.changeControlMode(TalonControlMode.Speed);
-		shooterFlywheelLeft.changeControlMode(TalonControlMode.Speed);
-		shooterFlywheelRight.setPID(Globals.shooterP, Globals.shooterI, Globals.shooterD);
-		shooterFlywheelLeft.setPID(Globals.shooterP, Globals.shooterI, Globals.shooterD);
-		drive(0);
+		shooterFlywheel.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		shooterFlywheel.changeControlMode(TalonControlMode.Speed);
+		shooterFlywheel.setPID(Globals.shooterFlywheelP, Globals.shooterFlywheelI, Globals.shooterFlywheelD);
+		shooterPolycord.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		shooterPolycord.changeControlMode(TalonControlMode.Speed);
+		shooterPolycord.setPID(Globals.shooterPolycordP, Globals.shooterPolycordI, Globals.shooterPolycordD);
+		driveFlywheel(0);
+		drivePolycord(0);
 	}
 	
-	public static double rightShooterVel(){
-		return shooterFlywheelRight.getEncVelocity();
-	}
-	
-	public static double leftShooterVel(){
-		return shooterFlywheelLeft.getEncVelocity();
+	public static double ShooterVel(){
+		return shooterFlywheel.getEncVelocity();
 	}
 	
 	public void dispShooterVel() {
-		SmartDashboard.putNumber("Right Velocity", rightShooterVel());
-		SmartDashboard.putNumber("Left Velocity", leftShooterVel());
+		SmartDashboard.putNumber("Flywheel Velocity", ShooterVel());
 	}
 	
     public void initDefaultCommand() {

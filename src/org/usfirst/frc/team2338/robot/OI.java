@@ -13,9 +13,6 @@ public class OI {
 	public static final Joystick leftStick = new Joystick(0);
 	public static final Joystick rightStick = new Joystick(1);
 	public static final Joystick auxStick = new Joystick(2);
-<<<<<<< HEAD
-
-=======
 	
 	public static Button leftTrigger;
 	private static Button left2;
@@ -30,7 +27,6 @@ public class OI {
 	private static Button right5;
 
 	private static Button auxTrigger;
->>>>>>> refs/remotes/origin/master
 	private static Button aux2;
 	private static Button aux3;
 	private static Button aux4;

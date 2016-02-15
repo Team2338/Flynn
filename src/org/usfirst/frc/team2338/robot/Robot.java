@@ -20,10 +20,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain drivetrain = new Drivetrain();
-<<<<<<< HEAD
-=======
-	public static final Shooter shooterFlywheel = new Shooter();
->>>>>>> refs/remotes/origin/master
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
@@ -49,11 +45,8 @@ public class Robot extends IterativeRobot {
     public void disabledInit() { }
 	
 	public void disabledPeriodic() {
-<<<<<<< HEAD
 		Scheduler.getInstance().run();
 		shooterFlywheel.dispShooterVel(); 
-=======
->>>>>>> refs/remotes/origin/master
 		update();
 	}
 
