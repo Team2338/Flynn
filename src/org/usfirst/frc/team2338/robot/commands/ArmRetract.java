@@ -25,7 +25,7 @@ public class ArmRetract extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.arm.getLimit();
+        return Robot.arm.getMin();
     }
 
     // Called once after isFinished returns true

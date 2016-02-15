@@ -28,5 +28,6 @@ public class RobotMap {
 	public static int shooterMaxAngle = 4;
 	public static int climberMin = 5;
 	public static int climberMax = 6;
-	public static int armLimit = 7;
+	public static int armMin = 7;
+	public static int armMax = 8;
 }

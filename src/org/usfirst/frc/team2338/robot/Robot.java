@@ -85,6 +85,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("CollectorAngleMax: ", collectorAngle.getMax());
         SmartDashboard.putBoolean("ShooterAngleMin: ", shooterAngle.getMin());
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
-        SmartDashboard.putBoolean("ArmLimit: ", arm.getLimit());
+        SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
+        SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
     }
 }

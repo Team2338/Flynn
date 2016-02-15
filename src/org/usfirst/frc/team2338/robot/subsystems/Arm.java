@@ -12,7 +12,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Arm extends Subsystem {
 	private static final CANTalon arm = new CANTalon(RobotMap.arm);
 	
-	private static final DigitalInput armLimit = new DigitalInput(RobotMap.armLimit);
+	private static final DigitalInput armMin = new DigitalInput(RobotMap.armMin);
+	private static final DigitalInput armMax = new DigitalInput(RobotMap.armMax);
 	
 	public Arm() {
 		super();
@@ -22,8 +23,12 @@ public class Arm extends Subsystem {
 		arm.set(speed);
 	}
 	
-	public boolean getLimit() {
-		return armLimit.get();
+	public boolean getMin() {
+		return armMin.get();
+	}
+	
+	public boolean getMax() {
+		return armMax.get();
 	}
 
     public void initDefaultCommand() {
