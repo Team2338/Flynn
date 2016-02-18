@@ -61,5 +61,14 @@ public class Globals {
 	public static final boolean leftDriveEncoderInverted = false;
 	public static final boolean rightDriveEncoderInverted = false;
 	
+	//PID STUUUUUUUUUUF
+	public static final double shooterFlywheelP = 0d; 
+	public static final double shooterFlywheelI = 0d; 
+	public static final double shooterFlywheelD = 0d; 
+	public static final double shooterPolycordP = 0d; 
+	public static final double shooterPolycordI = 0d; 
+	public static final double shooterPolycordD = 0d; 
+
+	
 }
 

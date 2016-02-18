@@ -10,14 +10,7 @@ import team.gif.commands.*;
  * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
 public class ShooterAngle extends Subsystem {
-<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/subsystems/ShooterAngle.java
-	
-	private static final CANTalon shooterAngle = new CANTalon(RobotMap.shooterAngle);
-=======
-    
 	private static final CANTalon shooterAngle = new CANTalon(shooterAnglePort);
->>>>>>> refs/remotes/origin/reorganization:src/team/gif/subsystems/ShooterAngle.java
-	
 	private static final DigitalInput shooterMinAngle = new DigitalInput(shooterMinAnglePort);
 	private static final DigitalInput shooterMaxAngle = new DigitalInput(shooterMaxAnglePort);
 

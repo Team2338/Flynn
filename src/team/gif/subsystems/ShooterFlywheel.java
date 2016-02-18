@@ -1,21 +1,20 @@
-package org.usfirst.frc.team2338.robot.subsystems;
+package team.gif.subsystems;
 
-import org.usfirst.frc.team2338.robot.Globals;
-import org.usfirst.frc.team2338.robot.RobotMap;
-import org.usfirst.frc.team2338.robot.commands.*;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import team.gif.Globals;
+import team.gif.commands.ShooterFlywheelStandby;
 
 /**
  *
  */
 public class ShooterFlywheel extends Subsystem {
     
-	private static final CANTalon shooterFlywheel = new CANTalon(RobotMap.shooterFlywheel);
-	private static final CANTalon shooterPolycord = new CANTalon(RobotMap.shooterPolycord);
+	private static final CANTalon shooterFlywheel = new CANTalon(Globals.shooterFlywheelPort);
+	private static final CANTalon shooterPolycord = new CANTalon(Globals.shooterPolycordPort);
 	
 	public ShooterFlywheel() {
 		super();

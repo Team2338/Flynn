@@ -21,12 +21,8 @@ import team.gif.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
-<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
 	public static final Drivetrain drivetrain = new Drivetrain();
-=======
 	public static final Drivetrain chassis = new Drivetrain();
-	public static final Shooter shooterFlywheel = new Shooter();
->>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
@@ -47,11 +43,8 @@ public class Robot extends IterativeRobot {
         chooser.addObject("DriveStraight", new DriveStraightEnc());
         chooser.addObject("LowBarToLowGoal", new LowBarToLowGoal());
         SmartDashboard.putData("Auto mode", chooser);
-        
-<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
-        teleOpCommand = new TankDrive();
-        teleOpCommand = new ShooterAngleChange();
-=======
+       
+        teleopCommand = new TankDrive();
         chassis.init();
         
         SmartDashboard.putNumber("TurnAngle", 0.0);
@@ -59,7 +52,6 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("DriveStraightAngleKp", Globals.driveStraightAngleKp);
         SmartDashboard.putNumber("DriveStraightDistKp", Globals.driveStraightDistKp);
         SmartDashboard.putNumber("DriveStraightDist", 0.0);
->>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
     }
 
     public void disabledInit() {}
@@ -97,12 +89,9 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
         SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
         SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
-<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
         SmartDashboard.putNumber("Flywheel Velocity", shooterFlywheel.ShooterVel());
-=======
         SmartDashboard.putNumber("ChassisAngle", chassis.getAngle());
     	SmartDashboard.putNumber("LeftDist", chassis.getLeftDist());
     	SmartDashboard.putNumber("RightDist", chassis.getRightDist());
->>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
     }
 }
