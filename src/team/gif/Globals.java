@@ -24,13 +24,14 @@ public class Globals {
 	public static final int frontRightDrivePort		= 2;
 	public static final int rearLeftDrivePort		= 3;
 	public static final int rearRightDrivePort		= 4;
-	public static final int collectorAnglePort		= 5;
-	public static final int collectorReceptorPort	= 6;
-	public static final int shooterFlywheelPort		= 7;
-	public static final int shooterPolycordPort		= 8;
-	public static final int shooterAnglePort		= 9;
-	public static final int climberPort				= 10;
-	public static final int armPort					= 11;
+	public static final int collectorAngleLeftPort	= 5;
+	public static final int collectorAngleRightPort	= 6;
+	public static final int collectorReceptorPort	= 7;
+	public static final int shooterFlywheelPort		= 8;
+	public static final int shooterPolycordPort		= 9;
+	public static final int shooterAnglePort		= 10;
+	public static final int climberPort				= 11;
+	public static final int armPort					= 12;
 
 	// DIO Ports
 	public static final int rightEncoderPortA		= 0;

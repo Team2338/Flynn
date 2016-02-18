@@ -29,6 +29,7 @@ public class Robot extends IterativeRobot {
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();
 	public static final Arm arm = new Arm();
+	public static final WheelyBar wheelyBar = new WheelyBar();
 	public static OI oi;
 	
 	Command autonomousCommand;
@@ -63,6 +64,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
     	if ((autonomousCommand = (Command) chooser.getSelected()) != null) autonomousCommand.start();
+    	wheelyBar.deploy();
     }
 
     public void autonomousPeriodic() {
