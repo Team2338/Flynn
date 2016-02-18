@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -49,21 +48,17 @@ public class ShooterFlywheel extends Subsystem {
 	
 	public void enableVelocityControl() {
 		shooterFlywheel.setFeedbackDevice(FeedbackDevice.QuadEncoder);
-		shooterFlywheel.changeControlMode(TalonControlMode.Speed);
-		shooterFlywheel.setPID(Globals.shooterFlywheelP, Globals.shooterFlywheelI, Globals.shooterFlywheelD);
 		shooterPolycord.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		shooterFlywheel.changeControlMode(TalonControlMode.Speed);
 		shooterPolycord.changeControlMode(TalonControlMode.Speed);
+		shooterFlywheel.setPID(Globals.shooterFlywheelP, Globals.shooterFlywheelI, Globals.shooterFlywheelD);
 		shooterPolycord.setPID(Globals.shooterPolycordP, Globals.shooterPolycordI, Globals.shooterPolycordD);
 		driveFlywheel(0);
 		drivePolycord(0);
 	}
 	
-	public static double ShooterVel(){
+	public  double ShooterVel(){
 		return shooterFlywheel.getEncVelocity();
-	}
-	
-	public void dispShooterVel() {
-		SmartDashboard.putNumber("Flywheel Velocity", ShooterVel());
 	}
 	
     public void initDefaultCommand() {

@@ -1,6 +1,5 @@
 package org.usfirst.frc.team2338.robot.subsystems;
 
-import org.usfirst.frc.team2338.robot.OI;
 import org.usfirst.frc.team2338.robot.RobotMap;
 import org.usfirst.frc.team2338.robot.commands.*;
 

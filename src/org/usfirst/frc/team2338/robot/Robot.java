@@ -45,8 +45,7 @@ public class Robot extends IterativeRobot {
     public void disabledInit() { }
 	
 	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-		shooterFlywheel.dispShooterVel(); 
+		Scheduler.getInstance().run(); 
 		update();
 	}
 
@@ -90,5 +89,6 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
         SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
         SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
+        SmartDashboard.putNumber("Flywheel Velocity", shooterFlywheel.ShooterVel());
     }
 }

@@ -1,7 +1,6 @@
 package org.usfirst.frc.team2338.robot.commands;
 
 import org.usfirst.frc.team2338.robot.Robot;
-import org.usfirst.frc.team2338.robot.subsystems.ShooterAngle;
 
 import edu.wpi.first.wpilibj.command.Command;
 
