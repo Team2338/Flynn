@@ -24,7 +24,7 @@ public class Robot extends IterativeRobot {
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final Drivetrain chassis = new Drivetrain();
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
-	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
+	public static final Shooter shooter = new Shooter();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();
@@ -89,7 +89,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
         SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
         SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
-        SmartDashboard.putNumber("Flywheel Velocity", shooterFlywheel.ShooterVel());
+        SmartDashboard.putNumber("Flywheel Velocity", shooter.ShooterVel());
         SmartDashboard.putNumber("ChassisAngle", chassis.getAngle());
     	SmartDashboard.putNumber("LeftDist", chassis.getLeftDist());
     	SmartDashboard.putNumber("RightDist", chassis.getRightDist());

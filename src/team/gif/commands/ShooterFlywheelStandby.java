@@ -9,14 +9,14 @@ import team.gif.Robot;
 public class ShooterFlywheelStandby extends Command {
 
     public ShooterFlywheelStandby() {
-    	requires(Robot.shooterFlywheel);
+    	requires(Robot.shooter);
     }
 
     protected void initialize() {}
 
     protected void execute() {
-    	Robot.shooterFlywheel.driveFlywheel(0);
-    	Robot.shooterFlywheel.drivePolycord(0);
+    	Robot.shooter.driveFlywheel(0);
+    	Robot.shooter.drivePolycord(0);
     }
 
     protected boolean isFinished() {
