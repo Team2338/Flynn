@@ -11,7 +11,8 @@ import team.gif.commands.*;
  */
 public class CollectorAngle extends Subsystem {
     
-	private static final CANTalon collectorAngle = new CANTalon(collectorAnglePort);
+	private static final CANTalon collectorAngleLeft = new CANTalon(collectorAngleLeftPort);
+	private static final CANTalon collectorAngleRight = new CANTalon(collectorAngleRightPort);
 	
 	private static final DigitalInput collectorMinAngle = new DigitalInput(collectorMinAnglePort);
 	private static final DigitalInput collectorMaxAngle = new DigitalInput(collectorMaxAnglePort);
@@ -21,7 +22,8 @@ public class CollectorAngle extends Subsystem {
 	}
 	
 	public void drive(double speed) {
-		collectorAngle.set(speed);
+		collectorAngleLeft.set(speed);
+		collectorAngleRight.set(speed);
 	}
 	
 	public boolean getMin() {
