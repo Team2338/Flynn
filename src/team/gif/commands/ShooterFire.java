@@ -29,7 +29,7 @@ public class ShooterFire extends Command {
     }
 
     protected boolean isFinished() {
-        return Timer.getFPGATimestamp() - initialTime > 5;
+        return Timer.getFPGATimestamp() - initialTime > Globals.shooterFlywheelTime + 2;
     }
 
     protected void end() {
