@@ -1,19 +1,20 @@
-package org.usfirst.frc.team2338.robot.subsystems;
+package team.gif.subsystems;
 
-import org.usfirst.frc.team2338.robot.RobotMap;
-import org.usfirst.frc.team2338.robot.commands.*;
+import static team.gif.Globals.*;
+
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import team.gif.commands.*;
 
 /**
- * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
+ * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
 public class Arm extends Subsystem {
-	private static final CANTalon arm = new CANTalon(RobotMap.arm);
+	private static final CANTalon arm = new CANTalon(armPort);
 	
-	private static final DigitalInput armMin = new DigitalInput(RobotMap.armMin);
-	private static final DigitalInput armMax = new DigitalInput(RobotMap.armMax);
+	private static final DigitalInput armMin = new DigitalInput(armMinPort);
+	private static final DigitalInput armMax = new DigitalInput(armMaxPort);
 	
 	public Arm() {
 		super();
@@ -35,4 +36,3 @@ public class Arm extends Subsystem {
     	setDefaultCommand(new ArmStandby());
     }
 }
-

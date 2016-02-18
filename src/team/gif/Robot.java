@@ -1,14 +1,16 @@
-package org.usfirst.frc.team2338.robot;
+package team.gif;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team2338.robot.commands.*;
-import org.usfirst.frc.team2338.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import team.gif.commands.*;
+import team.gif.commands.auto.AntiAuto;
+import team.gif.commands.auto.DriveStraightEnc;
+import team.gif.commands.auto.LowBarToLowGoal;
+import team.gif.commands.auto.Turn;
+import team.gif.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,7 +21,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
+<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
 	public static final Drivetrain drivetrain = new Drivetrain();
+=======
+	public static final Drivetrain chassis = new Drivetrain();
+	public static final Shooter shooterFlywheel = new Shooter();
+>>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
 	public static final ShooterFlywheel shooterFlywheel = new ShooterFlywheel();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
@@ -29,20 +36,33 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	Command autonomousCommand;
+	Command teleopCommand = new TankDrive();
     SendableChooser chooser;
-    
-    private Command teleOpCommand;
 
     public void robotInit() {
 		oi = new OI();
-        chooser = new SendableChooser();
+		chooser = new SendableChooser();
+        chooser.addDefault("AntiAuto", new AntiAuto());
+        chooser.addObject("Turn", new Turn());
+        chooser.addObject("DriveStraight", new DriveStraightEnc());
+        chooser.addObject("LowBarToLowGoal", new LowBarToLowGoal());
         SmartDashboard.putData("Auto mode", chooser);
         
+<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
         teleOpCommand = new TankDrive();
         teleOpCommand = new ShooterAngleChange();
+=======
+        chassis.init();
+        
+        SmartDashboard.putNumber("TurnAngle", 0.0);
+        SmartDashboard.putNumber("TurnKp", Globals.turnKp);
+        SmartDashboard.putNumber("DriveStraightAngleKp", Globals.driveStraightAngleKp);
+        SmartDashboard.putNumber("DriveStraightDistKp", Globals.driveStraightDistKp);
+        SmartDashboard.putNumber("DriveStraightDist", 0.0);
+>>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
     }
 
-    public void disabledInit() { }
+    public void disabledInit() {}
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run(); 
@@ -50,8 +70,7 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
-        if (autonomousCommand != null) autonomousCommand.start();
+    	if ((autonomousCommand = (Command) chooser.getSelected()) != null) autonomousCommand.start();
     }
 
     public void autonomousPeriodic() {
@@ -60,24 +79,13 @@ public class Robot extends IterativeRobot {
 
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
-        teleOpCommand.start();
+        teleopCommand.start();
     }
 
-    /**
-     * This function is called periodically during operator control
-     */
     public void teleopPeriodic() {
         update();
     }
     
-    public void testinit() { 	}
-    
-    /**
-     * This function is called periodically during test mode
-     */
-    public void testPeriodic() {
-        LiveWindow.run();
-    }
     
     public void update() {
         Scheduler.getInstance().run();
@@ -89,6 +97,12 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
         SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
         SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
+<<<<<<< HEAD:src/org/usfirst/frc/team2338/robot/Robot.java
         SmartDashboard.putNumber("Flywheel Velocity", shooterFlywheel.ShooterVel());
+=======
+        SmartDashboard.putNumber("ChassisAngle", chassis.getAngle());
+    	SmartDashboard.putNumber("LeftDist", chassis.getLeftDist());
+    	SmartDashboard.putNumber("RightDist", chassis.getRightDist());
+>>>>>>> refs/remotes/origin/reorganization:src/team/gif/Robot.java
     }
 }

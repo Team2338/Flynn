@@ -1,17 +1,16 @@
-package org.usfirst.frc.team2338.robot.subsystems;
+package team.gif.subsystems;
 
-import org.usfirst.frc.team2338.robot.RobotMap;
-import org.usfirst.frc.team2338.robot.commands.*;
-
+import static team.gif.Globals.*;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import team.gif.commands.*;
 
 /**
- * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
+ * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
 public class CollectorReceptor extends Subsystem {
 	
-	private static final CANTalon collectorReceptor = new CANTalon(RobotMap.collectorReceptor);
+	private static final CANTalon collectorReceptor = new CANTalon(collectorReceptorPort);
 	
 	public CollectorReceptor() {
 		super();

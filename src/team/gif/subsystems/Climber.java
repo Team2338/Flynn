@@ -1,20 +1,21 @@
-package org.usfirst.frc.team2338.robot.subsystems;
+package team.gif.subsystems;
 
-import org.usfirst.frc.team2338.robot.RobotMap;
-import org.usfirst.frc.team2338.robot.commands.*;
+import static team.gif.Globals.*;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import team.gif.commands.*;
 
 /**
- * @author Derek Ho, Armaan Shah, and Patrick Ubelhor
+ * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
+// FIXME: Add failsafe to prevent motor from going over 40 amps
 public class Climber extends Subsystem {
-	private static final CANTalon climber = new CANTalon(RobotMap.climber);
+	private static final CANTalon climber = new CANTalon(climberPort);
 	
-	private static final DigitalInput climberMin = new DigitalInput(RobotMap.climberMin);
-	private static final DigitalInput climberMax = new DigitalInput(RobotMap.climberMax);
+	private static final DigitalInput climberMin = new DigitalInput(climberMinPort);
+	private static final DigitalInput climberMax = new DigitalInput(climberMaxPort);
     
 	public Climber() {
 		super();
@@ -36,4 +37,3 @@ public class Climber extends Subsystem {
     	setDefaultCommand(new ClimberStandby());
     }
 }
-

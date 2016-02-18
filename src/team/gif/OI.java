@@ -1,14 +1,15 @@
-package org.usfirst.frc.team2338.robot;
+package team.gif;
 
-import org.usfirst.frc.team2338.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import team.gif.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
+@SuppressWarnings("unused")
 public class OI {
 	public static final Joystick leftStick = new Joystick(0);
 	public static final Joystick rightStick = new Joystick(1);
@@ -66,28 +67,20 @@ public class OI {
 		aux10 = new JoystickButton(auxStick, 10);
 		aux11 = new JoystickButton(auxStick, 11);
 		
+		// Right stick actions
+		right2.whileHeld(new ArmRetract());
+		right3.whileHeld(new ArmExtend());
+		
 		// Auxiliary actions
 		auxTrigger.whenPressed(new ShooterFire());
-		aux2.whenPressed(new CollectorCollect());
-		aux2.whenReleased(new CollectorReceptorStandby());
-		aux3.whenPressed(new CollectorEject());
-		aux3.whenReleased(new CollectorReceptorStandby());
-		aux4.whenPressed(new ArmExtend());
-		aux4.whenReleased(new ArmStandby());
-		aux5.whenPressed(new ArmRetract());
-		aux5.whenReleased(new ArmStandby());
-		aux6.whenPressed(new ClimberAscend());
-		aux6.whenReleased(new ClimberStandby());
-		aux7.whenPressed(new ClimberDescend());
-		aux7.whenReleased(new ClimberStandby());
-		aux8.whenPressed(new ShooterDown());
-		aux8.whenReleased(new ShooterAngleStandby());
-		aux9.whenPressed(new ShooterUp());
-		aux9.whenReleased(new ShooterUp());
-		aux10.whenPressed(new CollectorDown());
-		aux10.whenReleased(new CollectorAngleStandby());
-		aux11.whenPressed(new CollectorUp());
-		aux11.whenReleased(new CollectorAngleStandby());
+		aux2.whileHeld(new CollectorCollect());
+		aux3.whileHeld(new CollectorEject());
+		aux6.whileHeld(new ClimberAscend());
+		aux7.whileHeld(new ClimberDescend());
+		aux8.whileHeld(new ShooterDown());
+		aux9.whileHeld(new ShooterUp());
+		aux10.whileHeld(new CollectorDown());
+		aux11.whileHeld(new CollectorUp());
 	}
 }
 
