@@ -13,7 +13,7 @@ public class ShooterFire extends Command {
 	private double initialTime;
 	
     public ShooterFire() {
-        requires(Robot.shooterFlywheel);
+        requires(Robot.shooter);
     }
 
     protected void initialize() {
@@ -21,10 +21,10 @@ public class ShooterFire extends Command {
     }
 
     protected void execute() {
-    	Robot.shooterFlywheel.driveFlywheel(Globals.shooterFlywheelSpeed);
+    	Robot.shooter.driveFlywheel(Globals.shooterFlywheelSpeed);
     	
     	if (Timer.getFPGATimestamp() - initialTime > Globals.shooterFlywheelTime) {
-    		Robot.shooterFlywheel.drivePolycord(Globals.shooterPolycordSpeed);
+    		Robot.shooter.drivePolycord(Globals.shooterPolycordSpeed);
     	}
     }
 
@@ -33,8 +33,8 @@ public class ShooterFire extends Command {
     }
 
     protected void end() {
-    	Robot.shooterFlywheel.driveFlywheel(0);
-    	Robot.shooterFlywheel.drivePolycord(0);
+    	Robot.shooter.driveFlywheel(0);
+    	Robot.shooter.drivePolycord(0);
     }
 
     protected void interrupted() {}

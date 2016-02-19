@@ -21,9 +21,10 @@ import team.gif.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
+	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final Drivetrain chassis = new Drivetrain();
-	public static final Shooter shooterFlywheel = new Shooter();
 	public static final ShooterAngle shooterAngle = new ShooterAngle();
+	public static final Shooter shooter = new Shooter();
 	public static final CollectorReceptor collectorReceptor = new CollectorReceptor();
 	public static final CollectorAngle collectorAngle = new CollectorAngle();
 	public static final Climber climber = new Climber();
@@ -43,7 +44,8 @@ public class Robot extends IterativeRobot {
         chooser.addObject("DriveStraight", new DriveStraightEnc());
         chooser.addObject("LowBarToLowGoal", new LowBarToLowGoal());
         SmartDashboard.putData("Auto mode", chooser);
-        
+       
+        teleopCommand = new TankDrive();
         chassis.init();
         
         SmartDashboard.putNumber("TurnAngle", 0.0);
@@ -56,6 +58,7 @@ public class Robot extends IterativeRobot {
     public void disabledInit() {}
 	
 	public void disabledPeriodic() {
+		Scheduler.getInstance().run(); 
 		update();
 	}
 
@@ -88,6 +91,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("ShooteAngleMax: ", shooterAngle.getMax());
         SmartDashboard.putBoolean("ArmMin: ", arm.getMin());
         SmartDashboard.putBoolean("ArmMax: ", arm.getMax());
+        SmartDashboard.putNumber("Flywheel Velocity", shooter.ShooterVel());
         SmartDashboard.putNumber("ChassisAngle", chassis.getAngle());
     	SmartDashboard.putNumber("LeftDist", chassis.getLeftDist());
     	SmartDashboard.putNumber("RightDist", chassis.getRightDist());

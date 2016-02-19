@@ -10,9 +10,7 @@ import team.gif.commands.*;
  * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
 public class ShooterAngle extends Subsystem {
-    
 	private static final CANTalon shooterAngle = new CANTalon(shooterAnglePort);
-	
 	private static final DigitalInput shooterMinAngle = new DigitalInput(shooterMinAnglePort);
 	private static final DigitalInput shooterMaxAngle = new DigitalInput(shooterMaxAnglePort);
 
