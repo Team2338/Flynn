@@ -11,6 +11,9 @@ import team.gif.commands.*;
 /**
  * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
+// TODO: Test if PID will bring velocity to 0 in standby mode. If not... (see next)
+// TODO: Add enableManualControl() method for setting speed to absolute zero
+// TODO: Implement enableVelocityControl() in Commands
 public class Shooter extends Subsystem {
     
 	private static final CANTalon shooterFlywheel = new CANTalon(shooterFlywheelPort);
@@ -20,6 +23,7 @@ public class Shooter extends Subsystem {
 		super();
 	}
 
+	// NOTE: in PID control, this is in ticks per 100 ms
 	public void driveFlywheel(double speed) {
 		shooterFlywheel.set(speed);
 	}
@@ -43,7 +47,10 @@ public class Shooter extends Subsystem {
 		return shooterPolycord.getClosedLoopError();
 	}
 	
+	
 	public void enableVelocityControl() {
+		// FIXME: Polycord motor will not have a pid loop
+		// TODO: Add FeedForward constant to PID loop.
 		shooterFlywheel.setFeedbackDevice(FeedbackDevice.QuadEncoder);
 		shooterPolycord.setFeedbackDevice(FeedbackDevice.QuadEncoder);
 		shooterFlywheel.changeControlMode(TalonControlMode.Speed);
