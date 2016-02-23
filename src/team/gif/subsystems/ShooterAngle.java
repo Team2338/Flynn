@@ -9,6 +9,7 @@ import team.gif.commands.*;
 /**
  * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
+// TODO: Add PID control
 public class ShooterAngle extends Subsystem {
 	private static final CANTalon shooterAngle = new CANTalon(shooterAnglePort);
 	private static final DigitalInput shooterMinAngle = new DigitalInput(shooterMinAnglePort);

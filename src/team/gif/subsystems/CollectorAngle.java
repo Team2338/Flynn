@@ -12,6 +12,7 @@ import team.gif.commands.*;
 /**
  * @author DerekHo, ArmaanShah, and PatrickUbelhor
  */
+// TODO: Add PID control
 public class CollectorAngle extends Subsystem {
     
 	private static final CANTalon collectorAngleLeft = new CANTalon(collectorAngleLeftPort);
