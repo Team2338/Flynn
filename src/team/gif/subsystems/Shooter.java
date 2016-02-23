@@ -40,17 +40,11 @@ public class Shooter extends Subsystem {
 		return shooterFlywheel.getClosedLoopError();
 	}
 	
-<<<<<<< HEAD
-=======
 	public double getPolycordError() {
 		return shooterPolycord.getClosedLoopError();
 	}
-	
-	
->>>>>>> origin/PIDStuff
+
 	public void enableVelocityControl() {
-		// FIXME: Polycord motor will not have a pid loop
-		// TODO: Add FeedForward constant to PID loop.
 		shooterFlywheel.setFeedbackDevice(FeedbackDevice.QuadEncoder);
 		shooterFlywheel.changeControlMode(TalonControlMode.Speed);
 		shooterFlywheel.setPID(Globals.shooterFlywheelP, Globals.shooterFlywheelI, Globals.shooterFlywheelD, Globals.shooterFlywheelF, 0, 0, 0);
