@@ -17,6 +17,7 @@ public class ShooterFire extends Command {
     }
 
     protected void initialize() {
+    	Robot.shooter.enableVelocityControl();
     	initialTime = Timer.getFPGATimestamp();
     }
 

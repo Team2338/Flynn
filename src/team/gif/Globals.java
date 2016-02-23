@@ -65,11 +65,12 @@ public class Globals {
 	//PID STUUUUUUUUUUF
 	public static final double shooterFlywheelP = 0d; 
 	public static final double shooterFlywheelI = 0d; 
-	public static final double shooterFlywheelD = 0d; 
-	public static final double shooterPolycordP = 0d; 
-	public static final double shooterPolycordI = 0d; 
-	public static final double shooterPolycordD = 0d; 
-
+	public static final double shooterFlywheelD = 0d;
+	public static final double shooterFlywheelF = 0d;
+	public static final double collectorAngleP = 0d;
+	public static final double collectorAngleI = 0d;
+	public static final double collectorAngleD = 0d;
+	public static final double collectorAngleF = 0d;
 	
-}
+	}
 

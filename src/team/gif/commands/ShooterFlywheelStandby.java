@@ -12,7 +12,9 @@ public class ShooterFlywheelStandby extends Command {
     	requires(Robot.shooter);
     }
 
-    protected void initialize() {}
+    protected void initialize() {
+    	Robot.shooter.enableVelocityControl();
+    }
 
     protected void execute() {
     	Robot.shooter.driveFlywheel(0);
