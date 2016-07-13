@@ -79,7 +79,7 @@ public class Flynn extends IterativeRobot {
         
         Timer.delay(10);
         
-        // run GRIP in a new process        
+        // Runs GRIP in a new process        
         try {
         	new ProcessBuilder("/home/lvuser/grip").inheritIO().start();
         } catch (IOException e) {

@@ -27,7 +27,7 @@ public class Globals {
 	
 	// Dart
 	public static final double k_dartP					= 14.0; // c: 10.0
-	public static double s_dartHigh						= 0.760; // p: .750 c: 0.760
+	public static double s_dartHigh						= 0.758; // p: .755  pp: .750 c: 0.760
 	public static double s_dartCourtyard				= 0.545; // p: .530 c: 0.540
 	public static double s_dartLow						= 0.240; // p: .240 c: 0.240
 	public static double s_dartMid						= 0.200; // p: .190 c: 0.200
@@ -44,7 +44,7 @@ public class Globals {
 	public static final double s_collectorUp			= -4;
 //	public static final double s_collectorCheval		= -26;
 	public static final double s_collectorMid			= -42; // p: -32 c: -42
-	public static final double s_collectorDown			= -84; // p: -82 c: -80
+	public static final double s_collectorDown			= -87; // p: -84 pp: -82 c: -80
 //	public static final double s_collectorPortcullis	= -90;
 	public static final double m_collectorAngleSpeed	= 0.8;
 	public static final double t_collectorPosition		= 4;
@@ -58,7 +58,7 @@ public class Globals {
 	public static final double k_flywheelCourtyardP		= 0.185;
 	public static final int k_flywheelIZone				= 600; // 550
 	public static final double m_shooterPolycordSpeed	= 1.0; // Percentage
-	public static final double m_shooterFlywheelSpeed	= 0.500; // Percentage
+	public static final double m_shooterFlywheelSpeed	= 0.600; // Percentage
 	public static final double m_collectorPolycordSpeed	= 1.0;
 	public static final double s_batterPinRPM			= 13000;
 	public static final double s_courtyardRPM			= 17400; // 16700

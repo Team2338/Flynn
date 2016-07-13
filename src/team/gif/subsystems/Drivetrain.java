@@ -30,8 +30,8 @@ public class Drivetrain extends lib.gif.commands.Subsystem {
 	private static double averageX = 0;
 	private static double averageY = 0;
 	private static double averageZ = 0;
-	private static double driftVal = 0;
-	private static boolean isStopped = false;
+//	private static double driftVal = 0;
+//	private static boolean isStopped = false;
 	
 	/**
 	 * Resets encoders and calibrates the gyro and the built-in
@@ -91,27 +91,36 @@ public class Drivetrain extends lib.gif.commands.Subsystem {
 		SmartDashboard.putNumber("ChassisAngle: ", getAngle());
 		SmartDashboard.putNumber("LeftDist: ", getLeftDist());
 		SmartDashboard.putNumber("RightDist: ", getRightDist());
-		SmartDashboard.putBoolean("IsStopped: ", getIsStopped());
+//		SmartDashboard.putBoolean("IsStopped: ", getIsStopped());
 	}
+	
+//	public void calibrateDrift(){
+//		if (!rightEncoder.getStopped()) { // &&!leftEncoder.getStopped()
+//			drift.reset();
+//			driftVal = 0;
+//			isStopped = false;
+//		}
+//		
+//		if (rightEncoder.getStopped()) { // &&leftEncoder.getStopped()
+//			driftVal += drift.getAngle();
+//			isStopped = true;
+//		}
+//	}
 	
 	/**
 	 * @return Angle of the robot, measured by the gyro
 	 */
 	public double getAngle() {
-		if (rightEncoder.getStopped()) { // &&leftEncoder.getStopped()
-			drift.reset();
-			driftVal = 0;
-			isStopped = true;
-		}
+//		calibrateDrift();
+//		if (rightEncoder.getStopped()) { // &&leftEncoder.getStopped()
+//			isStopped = true;
+//		}
+//		
+//		while (isStopped) {
+//			driftVal += drift.getAngle();
+//		}
 		
-		while (isStopped) {
-			driftVal += drift.getAngle();
-			if (!rightEncoder.getStopped()) { // &&!leftEncoder.getStopped()
-				isStopped = false;
-			}
-		}
-		
-		return gyro.getAngle() - driftVal;
+		return gyro.getAngle();
 	}
 	
 	/**
@@ -160,9 +169,9 @@ public class Drivetrain extends lib.gif.commands.Subsystem {
 	 * 
 	 * @return Boolean of whether both encoders are not accumulating
 	 */
-	public boolean getIsStopped() {
-		return isStopped;
-	}
+//	public boolean getIsStopped() {
+//		return isStopped;
+//	}
     
     public void initDefaultCommand() {
     	setDefaultCommand(new TankDrive());

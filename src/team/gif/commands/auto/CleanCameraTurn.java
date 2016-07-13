@@ -20,7 +20,7 @@ public class CleanCameraTurn extends Command {
 			Globals.k_cameraTurnP, Globals.k_cameraTurnI, Globals.k_cameraTurnD, Globals.k_cameraTurnIZone);
 	private final double maxSpeed = Globals.t_cameraTurnMaxSpeed;
 	private boolean inTolerance;
-	private boolean isRev = false;
+	private static boolean isRev = false;
 
     public CleanCameraTurn() {
         requires(chassis);
@@ -93,7 +93,6 @@ public class CleanCameraTurn extends Command {
     		new CleanCameraTurn().start();
     	} else {
     		System.out.println("Final centerX: " + centerX);
-
 			new FireShooter(0.0).start();
     	}
     	
@@ -102,5 +101,4 @@ public class CleanCameraTurn extends Command {
     }
 
     protected void interrupted() {}
-    
 }
