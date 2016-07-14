@@ -64,6 +64,8 @@ public class Intake extends lib.gif.commands.Subsystem {
     	SmartDashboard.putNumber("I Gain", getIGain());
     	SmartDashboard.putNumber("D Gain", getDGain());
     	SmartDashboard.putNumber("F Gain", getFGain());
+    	SmartDashboard.putNumber("Fly1", flywheel.getOutputVoltage());
+    	SmartDashboard.putNumber("Fly2", flywheel2.getOutputVoltage());
 	}
 		
 	public double getVelocity() {

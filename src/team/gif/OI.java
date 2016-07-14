@@ -102,7 +102,7 @@ public class OI {
 		aux2.whileHeld(new CollectorManualDown());
 		aux5.whileHeld(new IntakeEject());
 		if (automatic) {
-			aux3.whenPressed(new RevShooter(Globals.s_batterPinRPM));
+//			aux3.whenPressed());
 			aux4.whenPressed(new FireShooter(0.25));
 			aux6.whenPressed(new CollectToDrive());
 			aux7.whenPressed(new AllHigh());
@@ -111,7 +111,7 @@ public class OI {
 			aux10.whenPressed(new AllLow());
 //			aux12.whenPressed(new CameraTurn(18200)); // Low goal w/ camera
 //			aux12.whenPressed(new FireGenericShot(Globals.s_lowBarRPM, 0.0)); // Low goal shot
-			aux12.whenPressed(new FireGenericShot(Globals.s_autoRPM, 0.0));
+			aux12.whenPressed(new RevShooter(Globals.s_batterPinRPM));
 //			aux13.whenReleased(new CollectorSetAngle(CollectorAngle.Level.CHEVAL));
 			aux13.whenReleased(new CollectorCoastUp()); // TODO: Don't let this intersect w/ shooter
 		} else {

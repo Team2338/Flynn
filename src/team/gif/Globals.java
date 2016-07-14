@@ -31,7 +31,7 @@ public class Globals {
 	public static double s_dartCourtyard				= 0.545; // p: .530 c: 0.540
 	public static double s_dartLow						= 0.240; // p: .240 c: 0.240
 	public static double s_dartMid						= 0.200; // p: .190 c: 0.200
-	public static double s_dartDown						= 0.067; // p: .035 c: 0.050
+	public static double s_dartDown						= 0.081; // p: 0.067 p: .035 c: 0.050
 	public static double s_dartAuto						= 0.550;
 	public static final double m_dartSpeed				= 0.75; // Percentage
 	public static final double t_dartPosition			= 0.012;
@@ -51,14 +51,14 @@ public class Globals {
 	public static final double t_collectorSafePoint		= -35; // FIXME: Optimize
 	
 	// Intake
-	public static final double k_flywheelP				= 0.180; // 0.172
+	public static final double k_flywheelP				= 0.180; // 0.180
 	public static final double k_flywheelI				= 0.0004; // 0.0004
-	public static final double k_flywheelD				= 0.001; // 0.00
+	public static final double k_flywheelD				= 0.001; // 0.001
 	public static final double k_flywheelF				= 0.042; // 0.042
 	public static final double k_flywheelCourtyardP		= 0.185;
 	public static final int k_flywheelIZone				= 600; // 550
 	public static final double m_shooterPolycordSpeed	= 1.0; // Percentage
-	public static final double m_shooterFlywheelSpeed	= 0.600; // Percentage
+	public static final double m_shooterFlywheelSpeed	= 0.500; // Percentage
 	public static final double m_collectorPolycordSpeed	= 1.0;
 	public static final double s_batterPinRPM			= 13000;
 	public static final double s_courtyardRPM			= 17400; // 16700

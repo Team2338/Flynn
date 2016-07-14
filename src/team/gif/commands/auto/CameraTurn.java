@@ -31,7 +31,7 @@ public class CameraTurn extends Command {
 	private static final File logFile = new File("/GearItForward/CameraTurn.log");
 	private final boolean isAuto;
 	private final double shooterVel;
-	private boolean isRev = false;
+	private boolean isRev = false; // Static possible? Variable not necessary?
 
     public CameraTurn() {
         this(false, Globals.s_courtyardRPM);
