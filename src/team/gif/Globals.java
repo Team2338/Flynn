@@ -27,12 +27,12 @@ public class Globals {
 	
 	// Dart
 	public static final double k_dartP					= 14.0; // c: 10.0
-	public static double s_dartHigh						= 0.758; // p: .755  pp: .750 c: 0.760
-	public static double s_dartCourtyard				= 0.545; // p: .530 c: 0.540
+	public static double s_dartHigh						= 0.771; // p: .755 c-old: 0.758
+	public static double s_dartCourtyard				= 0.558; // p: .530 c: 0.545
 	public static double s_dartLow						= 0.240; // p: .240 c: 0.240
 	public static double s_dartMid						= 0.200; // p: .190 c: 0.200
 	public static double s_dartDown						= 0.081; // p: 0.067 p: .035 c: 0.050
-	public static double s_dartAuto						= 0.550;
+	public static double s_dartAuto						= 0.558;
 	public static final double m_dartSpeed				= 0.75; // Percentage
 	public static final double t_dartPosition			= 0.012;
 	public static final double t_dartSafePoint			= 0.450; // FIXME: Optimize
@@ -73,8 +73,8 @@ public class Globals {
 	// Camera
 	public static final double s_cameraCenterX = 155;
 	public static final double s_cameraCenterY = 20;
-	public static final double k_cameraTurnP = 0.08;
-	public static final double k_cameraTurnI = 0.09; // 0.04
+	public static final double k_cameraTurnP = 0.10; // 0.08
+	public static final double k_cameraTurnI = 0.10; // 0.09
 	public static final double k_cameraTurnD = 0.0;
 	public static final double k_cameraTurnIZone = 3.0;
 	public static final double k_distanceConversionFactor = -65.0;

@@ -42,14 +42,8 @@ public class Flynn extends IterativeRobot {
 		
         autoChooser = new SendableChooser();
         autoChooser.addDefault("AntiAuto", new AntiAuto());
-        autoChooser.addObject("Gross Cam Turn", new CameraTurn());
-        autoChooser.addObject("Clean Cam Turn", new CleanCameraTurn());
-        autoChooser.addObject("Cam Drive", new CameraDrive());
         autoChooser.addObject("CrossDefense", new MultiStageCross());
         autoChooser.addObject("HighGoalAuto", new CameraHighGoal());
-//        autoChooser.addObject("Patcullis", new Patcullis());
-//        autoChooser.addObject("LowBar", new BackwardsLowBar());
-//        autoChooser.addObject("Cheval(DON'T)", new Cheval());
         SmartDashboard.putData("Auto mode chooser", autoChooser);
         
         delayChooser = new SendableChooser();

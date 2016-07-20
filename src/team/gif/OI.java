@@ -103,7 +103,7 @@ public class OI {
 		aux5.whileHeld(new IntakeEject());
 		if (automatic) {
 //			aux3.whenPressed());
-			aux4.whenPressed(new FireShooter(0.25));
+			aux4.whenPressed(new FireShooter(0.25, Globals.s_batterPinRPM));
 			aux6.whenPressed(new CollectToDrive());
 			aux7.whenPressed(new AllHigh());
 			aux8.whenPressed(new ShooterSetAngle(Dart.Level.OUTERWORKS));

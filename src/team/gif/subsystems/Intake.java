@@ -64,8 +64,8 @@ public class Intake extends lib.gif.commands.Subsystem {
     	SmartDashboard.putNumber("I Gain", getIGain());
     	SmartDashboard.putNumber("D Gain", getDGain());
     	SmartDashboard.putNumber("F Gain", getFGain());
-    	SmartDashboard.putNumber("Fly1", flywheel.getOutputVoltage());
-    	SmartDashboard.putNumber("Fly2", flywheel2.getOutputVoltage());
+//    	SmartDashboard.putNumber("Fly1", flywheel.getOutputVoltage());
+//    	SmartDashboard.putNumber("Fly2", flywheel2.getOutputVoltage());
 	}
 		
 	public double getVelocity() {
@@ -113,6 +113,10 @@ public class Intake extends lib.gif.commands.Subsystem {
 	
 	public double getFGain() {
 		return flywheel.getF() * flywheel.getSetpoint() / 1023;
+	}
+	
+	public double getSetpoint() {
+		return flywheel.getSetpoint();
 	}
 	
 	public void resetIAccum() {

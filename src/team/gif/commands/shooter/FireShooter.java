@@ -13,9 +13,15 @@ import team.gif.commands.auto.WaitCommand;
  */
 public class FireShooter extends lib.gif.commands.CommandGroup {
 
-    public FireShooter(double driveSpeed) {
+//    public FireShooter(double driveSpeed) {
+////    	addSequential(new RevShooter(Globals.s_batterPinRPM));
+////    	addSequential(new WaitCommand(0.1));
+//        addSequential(new ShooterFire(driveSpeed));
+//    }
+    
+    public FireShooter(double driveSpeed, double shooterVel) {
     	addSequential(new WaitCommand(0.1));
-        addSequential(new ShooterFire(driveSpeed));
+    	addSequential(new ShooterFire(driveSpeed, shooterVel));
     }
     
     private class ShooterFire extends lib.gif.commands.Command {
@@ -26,21 +32,41 @@ public class FireShooter extends lib.gif.commands.CommandGroup {
     	private double acceleration;
     	private boolean hasFired;
     	private final double driveSpeed;
+    	private final double shooterVel;
     	
 //    	private final File logFile = new File("/GearItForward/ShooterPIDF");
 //    	private final DecimalFormat df = new DecimalFormat("#.###");
     	
         public ShooterFire(double driveSpeed) {
+        	this(driveSpeed, Globals.s_batterPinRPM);
+        }
+        
+        public ShooterFire(double driveSpeed, double shooterVel) {
         	super();
         	requires(intake);
         	requires(chassis);
         	this.driveSpeed = driveSpeed;
+        	this.shooterVel = shooterVel;
         }
 
         protected void initialize() {
-	    	intake.setMode(TalonControlMode.Speed);
-	    	intake.resetIAccum();
-	    	intake.driveReceptor(0);
+        	
+        	if (intake.getSetpoint() != shooterVel) {
+        		intake.setMode(TalonControlMode.PercentVbus);
+            	intake.driveReceptor(0);
+            	intake.driveFlywheel(Globals.m_shooterFlywheelSpeed);
+            	intake.driveChamber(Globals.m_shooterPolycordSpeed);
+            	Timer.delay(0.05);
+            	
+            	intake.driveFlywheel(0);
+            	Timer.delay(0.1);
+            	
+            	intake.driveChamber(0);
+            	intake.setMode(TalonControlMode.Speed);
+            	intake.resetIAccum();
+            	intake.driveFlywheel(shooterVel);
+        	}
+        	
 	    	chassis.drive(driveSpeed, driveSpeed);
 	    	Timer.delay(0.022);
 	    	

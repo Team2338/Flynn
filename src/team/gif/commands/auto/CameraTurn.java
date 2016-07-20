@@ -31,7 +31,7 @@ public class CameraTurn extends Command {
 	private static final File logFile = new File("/GearItForward/CameraTurn.log");
 	private final boolean isAuto;
 	private final double shooterVel;
-	private boolean isRev = false; // Static possible? Variable not necessary?
+//	private boolean isRev = false; // Static possible? Variable not necessary?
 
     public CameraTurn() {
         this(false, Globals.s_courtyardRPM);
@@ -55,9 +55,12 @@ public class CameraTurn extends Command {
     	System.out.println("Entering CameraStuff");
     	System.out.println(Timer.getMatchTime());
     	
-    	if (!isRev) {
-        	new RevShooter(Globals.s_courtyardRPM).start();
-        	isRev = true;
+//    	if (!isRev) {
+//        	new RevShooter(Globals.s_courtyardRPM).start();
+//        	isRev = true;
+//    	}
+    	if (team.gif.Flynn.intake.getSetpoint() != Globals.s_courtyardRPM) {
+    		new RevShooter(Globals.s_courtyardRPM).start();    		
     	}
     	
     	if (grip.getNumberArray("myContoursReport/centerX", new Double[] {0.0}) != null) {
@@ -163,7 +166,7 @@ public class CameraTurn extends Command {
     		if (isAuto) {
     			new ShootAndTurn().start();    			
     		} else {
-    			new FireShooter(0.0).start();
+    			new FireShooter(0.0, Globals.s_courtyardRPM).start();
     		}
     	}
     	

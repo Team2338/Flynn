@@ -32,16 +32,12 @@ public class RevShooter extends CommandGroup {
         protected void initialize() {
         	intake.setMode(TalonControlMode.Speed);
         	intake.driveReceptor(0);
-        	intake.driveFlywheel(setpoint);
-        	
-        	intake.driveChamber(Globals.m_shooterPolycordSpeed);
-    		Timer.delay(0.3);
-    		intake.driveChamber(0);
-    		
         }
 
 		@Override
-		protected void execute() {}
+		protected void execute() {
+			intake.driveFlywheel(setpoint);
+		}
 
 		@Override
 		protected boolean isFinished() {
