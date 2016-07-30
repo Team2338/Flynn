@@ -27,15 +27,15 @@ public class Globals {
 	
 	// Dart
 	public static final double k_dartP					= 14.0; // c: 10.0
-	public static double s_dartHigh						= 0.771; // p: .755 c-old: 0.758
-	public static double s_dartCourtyard				= 0.558; // p: .530 c: 0.545
-	public static double s_dartLow						= 0.240; // p: .240 c: 0.240
-	public static double s_dartMid						= 0.200; // p: .190 c: 0.200
-	public static double s_dartDown						= 0.081; // p: 0.067 p: .035 c: 0.050
+	public static double s_dartHigh						= 0.740; // c: 0.771
+	public static double s_dartCourtyard				= 0.540; // c: 0.558
+	public static double s_dartLow						= 0.240; // c: 0.240
+	public static double s_dartMid						= 0.200; // c: 0.200
+	public static double s_dartDown						= 0.06; // c: 0.081
 	public static double s_dartAuto						= 0.558;
 	public static final double m_dartSpeed				= 0.75; // Percentage
 	public static final double t_dartPosition			= 0.012;
-	public static final double t_dartSafePoint			= 0.450; // FIXME: Optimize
+	public static final double t_dartSafePoint			= 0.440;
 	public static final double t_dartSoftMax			= 0.800;
 	public static final double t_dartSoftMin			= 0.020;
 	
